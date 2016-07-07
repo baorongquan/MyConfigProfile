@@ -7,8 +7,8 @@ syntax enable		" enable syntax processing
 set background=dark 
 set tabstop=4		" number of visual spaces per TAB 
 set shiftwidth=4	
-set softtabstop=4	" number of spaces in tab when edinting 
-set expandtab		" tabs are spaces 
+set softtabstop=4	" number of spaces in tab when editing 
+"set expandtab		" tabs are spaces 
 set cursorline		" highlight current line 
 set wildmenu		" visual autocomplete for command 
 set lazyredraw		" redraw only when we need to 
@@ -59,6 +59,10 @@ Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'quickfix/quickfix'
 Plugin 'majutsushi/tagbar'
 Plugin 'https://github.com/sjl/gundo.vim.git'
+Plugin 'fatih/vim-go'
+Plugin 'dgryski/vim-godef'
+Plugin 'Blackrush/vim-gocode'
+"Plugin 'majutsushi/tagbar'
 call vundle#end()
 filetype plugin indent on
 
@@ -107,6 +111,8 @@ let g:UltiSnipsListSnippets="<c-e>"
 "let Tlist_Show_One_File=1
 "let Tlist_Exit_OnlyWindow=1
 
+let g:syntastic_ignore_files=[".*\.py$"]
+
 nmap <F9> <Esc>:!ctags -R fields=+lS *<CR> 
 set tags=tags 
 set tags+=./tags; "set tags+=/usr/include/tags
@@ -147,10 +153,10 @@ elseif tagbar_open
 	wincmd l
 	wincmd L
 else 
-	TagbarOpen
 	NERDTree
-	wincmd J
-	wincmd k
+	TagbarOpen
+	wincmd K
+	wincmd j
 	wincmd l
 	wincmd L
 endif 
@@ -167,3 +173,12 @@ nnoremap <leader>a :Ag
 
 " toggle gundo 
 nnoremap <leader>u :GundoToggle<CR>
+
+" go config 
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_interfaces = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+let g:go_fmt_command = "goimports"
