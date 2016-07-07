@@ -58,7 +58,9 @@ Plugin 'git://git.wincent.com/command-t.git'
 "Plugin 'mbbill/echofunc'
 Plugin 'quickfix/quickfix'
 Plugin 'majutsushi/tagbar'
+"Plugin 'mileszs/ack.vim'
 Plugin 'https://github.com/sjl/gundo.vim.git'
+Plugin 'https://github.com/rking/ag.vim'
 Plugin 'fatih/vim-go'
 Plugin 'dgryski/vim-godef'
 Plugin 'Blackrush/vim-gocode'
@@ -92,6 +94,7 @@ let g:ycm_collect_identifiers_from_comments_and_strings=0
 let g:ycm_global_ycm_extra_conf="~/.vim/.ycm_extra_conf.py"
 nnoremap <leader>gt :YcmCompleter GoTo<CR>
 nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
 function! MyTabFunction ()
 let line = getline('.')
 let substr = strpart(line, -1, col('.')+1)
