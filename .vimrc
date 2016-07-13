@@ -64,6 +64,9 @@ Plugin 'https://github.com/rking/ag.vim'
 Plugin 'fatih/vim-go'
 Plugin 'dgryski/vim-godef'
 Plugin 'Blackrush/vim-gocode'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'suan/vim-instant-markdown'
 "Plugin 'majutsushi/tagbar'
 call vundle#end()
 filetype plugin indent on
