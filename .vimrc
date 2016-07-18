@@ -67,6 +67,7 @@ Plugin 'Blackrush/vim-gocode'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'suan/vim-instant-markdown'
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 "Plugin 'majutsushi/tagbar'
 call vundle#end()
 filetype plugin indent on
@@ -219,3 +220,12 @@ if $GOPATH != ''
 	  " syntastic set
 	  let g:syntastic_go_checkers = ['go', 'golint', 'govet']
 endif
+
+" powerline config
+set guifont=Inconsolata\ for\ Powerline:h15
+let g:Powerline_symbols = 'fancy'
+set encoding=utf-8
+set t_Co=256
+set fillchars+=stl:\ ,stlnc:\
+set term=xterm-256color
+set termencoding=utf-8
