@@ -117,7 +117,30 @@ let g:UltiSnipsListSnippets="<c-e>"
 "let Tlist_Show_One_File=1
 "let Tlist_Exit_OnlyWindow=1
 
-let g:syntastic_ignore_files=[".*\.py$"]
+let g:syntastic_error_symbol='>>'
+let g:syntastic_warning_symbol='>'
+let g:syntastic_check_on_open=1
+let g:syntastic_check_on_wq=0
+let g:syntastic_enable_highlighting=1
+let g:syntastic_python_checkers=['pyflakes'] " 使用pyflakes,速度比pylint快
+let g:syntastic_javascript_checkers = ['jsl', 'jshint']
+let g:syntastic_html_checkers=['tidy', 'jshint']
+" 修改高亮的背景色, 适应主题
+highlight SyntasticErrorSign guifg=white guibg=black
+
+" to see error location list
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_loc_list_height = 5
+function! ToggleErrors()
+	let old_last_winnr = winnr('$')
+	lclose
+	if old_last_winnr == winnr('$')
+		"Nothing was closed, open syntastic error location panel Errors
+    endif
+endfunction
+nnoremap <Leader>s :call ToggleErrors()<cr>"
+
 
 nmap <F9> <Esc>:!ctags -R fields=+lS *<CR> 
 set tags=tags 
@@ -188,3 +211,11 @@ let g:go_highlight_interfaces = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 let g:go_fmt_command = "goimports"
+
+
+if $GOPATH != ''
+	  " golint
+	   execute "set rtp+=".globpath($GOPATH, "src/github.com/golang/lint/misc/vim")
+	  " syntastic set
+	  let g:syntastic_go_checkers = ['go', 'golint', 'govet']
+endif
