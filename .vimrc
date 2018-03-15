@@ -1,6 +1,7 @@
 "author rongquan.bao@gmail.com
 
 set nocompatible
+set backspace=indent,eol,start
 set nu
 filetype off
 syntax enable		" enable syntax processing 
