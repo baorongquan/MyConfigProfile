@@ -1,0 +1,16 @@
+{
+    // golang 
+    "go.coverOnSave": false,
+    "go.useCodeSnippetsOnFunctionSuggestWithoutType": true,
+    "go.formatTool": "gofmt",
+    "go.gopath": "$GOPATH",
+    "go.gocodeAutoBuild": true,
+    "go.inferGopath": true,
+    "go.autocompleteUnimportedPackages": true,
+    "go.addTags": {
+        "tags": "json",
+        "options": "json=omitempty",
+        "promptForTags": true,
+        "transform": "snakecase"
+    },
+}

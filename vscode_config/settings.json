@@ -1,0 +1,44 @@
+   // 将设置放入此文件中以覆盖默认设置
+{
+    // proxy 
+    "http.proxy": "http://127.0.0.1:1080",
+    
+    "window.zoomLevel": 2,
+    "files.autoSave": "afterDelay",
+    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+    "typescript.check.npmIsInstalled": false,
+    "explorer.confirmDragAndDrop": false,
+    "extensions.ignoreRecommendations": false,
+    "sync.gist": "974f69033c913ad2d8bff6b6bba5a93c",
+    "editor.fontLigatures":true,
+    "editor.fontWeight": "500",
+
+    // vim 
+    "vim.easymotion": true,
+    "vim.sneak": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "k"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<leader>", "d"],
+            "after": ["d", "d"]
+        },
+        {
+            "before": ["<C-n>"],
+            "commands": [":nohl"]
+        }
+    ],
+    "vim.leader": "<space>",
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-f>": true 
+    },
+}
