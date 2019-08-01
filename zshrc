@@ -74,15 +74,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-	git 
-	tmux 
-	autojump 
-	go 
-	golang 
-	man
-	zsh-navigation-tools
-	)
+plugins=(git tmux autojump go man zsh-navigation-tools docker kubectl incr)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -133,3 +125,12 @@ ssh() {
 	command ssh "$@"
 	settitle "zsh"
 }
+
+#complete -W "$(echo $(grep '^Host ' ~/.ssh/config  | sort -u | sed 's/^ssh //'))" ssh
+#complete -W "$(echo $(grep '^Host ' ~/.ssh/config  | sort -u | sed 's/^scp //'))" scp
+
+win_proxy() {
+	http_proxy=127.0.0.1:1080
+	https_proxy=127.0.0.1:1080
+}
+
