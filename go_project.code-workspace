@@ -1,0 +1,51 @@
+{
+	"folders": [
+		{
+			"path": "G:\\work\\goprogram\\github.com\\brq"
+		}
+    ],
+    "settings": {
+       // golang 
+    "go.coverOnSave": false,
+    "go.useCodeSnippetsOnFunctionSuggestWithoutType": true,
+    "go.formatTool": "goimports",
+    "go.docsTool": "guru",
+    "go.gocodeAutoBuild": true,
+    "go.inferGopath": true,
+    "go.autocompleteUnimportedPackages": true,
+    "go.lintTool":"golangci-lint",
+    "go.lintFlags": [
+        "--fast",
+    ],
+    "go.addTags": {
+        "tags": "json",
+        "options": "json=omitempty",
+        "promptForTags": true,
+        "transform": "snakecase"
+    },
+    "go.useLanguageServer": false,
+    "go.languageServerExperimentalFeatures": {
+        "format": false,
+        "autoComplete": true,
+        "rename": true,
+        "goToDefinition": true,
+        "hover": true,
+        "signatureHelp": true,
+        "goToTypeDefinition": true,
+        "goToImplementation": true,
+        "documentSymbols": true,
+        "workspaceSymbols": true,
+        "findReferences": true,
+        "diagnostics": true,
+        "documentLink": true
+    },
+    // "go.languageServerFlags": ["-logfile", "path to a text file that exists"],
+    "[go]": {
+      "editor.snippetSuggestions": "none",
+      "editor.formatOnSave": true,
+      "editor.codeActionsOnSave": {
+        "source.organizeImports": true,
+      }
+    },
+    }
+}
