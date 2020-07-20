@@ -16,7 +16,7 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 sudo apt-get install autojump
 
 # zsh 里面配置autojump
-cat ". /usr/share/autojump/autojump.sh" >> ~/.zshrc
+echo ". /usr/share/autojump/autojump.sh" >> ~/.zshrc
 
 # 下载安装zsh-syntax-highlighting语法高亮插件
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
